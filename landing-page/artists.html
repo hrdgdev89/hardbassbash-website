@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artists — HardBassBash</title>
+  <meta name="description" content="Meet the HardBassBash roster: Oschie, Jourdy Cox, Marth, KittyFlip, Micju, Barra & HRDG. Jakarta's finest hard techno artists.">
+  <meta property="og:title" content="Artists — HardBassBash">
+  <meta property="og:description" content="Meet Jakarta's hard techno collective roster.">
+  <meta property="og:type" content="website">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Artist page — extended cards */
+    .artist-page-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .artist-full-card {
+      border: 1px solid var(--border);
+      background: var(--bg-surface);
+      overflow: hidden;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .artist-full-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 40px rgba(229,0,26,0.12);
+    }
+
+    .artist-full-card__image {
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .artist-full-card__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      filter: grayscale(30%);
+      transition: var(--transition-slow);
+    }
+
+    .artist-full-card:hover .artist-full-card__image img {
+      filter: grayscale(0%);
+      transform: scale(1.04);
+    }
+
+    .artist-full-card__num {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+    }
+
+    .artist-full-card__body {
+      padding: 1.75rem;
+    }
+
+    .artist-full-card__name {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+
+    .artist-full-card__role {
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .artist-full-card__bio {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+    }
+
+    .artist-full-card__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .artist-full-card__social {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .artist-full-card__social a {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      transition: var(--transition);
+    }
+
+    .artist-full-card__social a:hover {
+      border-color: var(--accent);
+      color: #fff;
+      background: var(--accent);
+    }
+
+    .booking-section {
+      padding: 6rem 0;
+      background: var(--bg-elevated);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .booking-section h2 {
+      font-size: clamp(2rem, 6vw, 5rem);
+      margin-bottom: 1rem;
+    }
+
+    .booking-section p {
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .artist-page-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="navbar__logo"><img src="images/Logo_HARDBASSBASH_White.png" alt="HardBassBash"></a>
+    <div class="navbar__links">
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="artists.html" class="active">Artists</a>
+      <a href="music.html">Music</a>
+      <a href="shop.html">Shop</a>
+      <a href="contact.html" class="navbar__cta">Contact</a>
+    </div>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="navbar__mobile" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="artists.html">Artists</a>
+    <a href="music.html">Music</a>
+    <a href="shop.html">Shop</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- ===== PAGE HERO ===== -->
+  <div class="page-hero">
+    <div class="page-hero__bg" style="background-image: url('images/event_jakarta.png')"></div>
+    <div class="page-hero__ghost">ARTISTS</div>
+    <div class="container">
+      <p class="page-hero__label">The Collective</p>
+      <h1 class="page-hero__title">OUR ARTISTS</h1>
+      <p class="page-hero__subtitle">Seven artists. One collective. Pushing the boundaries of Indonesia's underground hard techno scene.</p>
+    </div>
+  </div>
+
+  <!-- ===== ARTISTS GRID ===== -->
+  <section class="section" id="roster">
+    <div class="container">
+      <div class="artist-page-grid" id="artistsGrid">
+
+        <!-- Oschie -->
+        <div class="artist-full-card reveal">
+          <div class="artist-full-card__image">
+            <img src="images/artist_oschie.png" alt="Oschie">
+            <div class="artist-full-card__num">01</div>
+          </div>
+          <div class="artist-full-card__body">
+            <h2 class="artist-full-card__name">OSCHIE</h2>
+            <p class="artist-full-card__role">DJ · Producer</p>
+            <p class="artist-full-card__bio">One of the founding members of HardBassBash, Oschie brings a relentless, mechanical energy to every set. Known for his ability to read the crowd and push the dancefloor to its absolute limit with raw industrial hard techno.</p>
+            <div class="artist-full-card__footer">
+              <div class="artist-full-card__social">
+                <a href="https://www.instagram.com/hardbassbash/" target="_blank" rel="noopener" title="Instagram">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+              </div>
+              <a href="events.html" class="btn btn-primary btn-sm">View Events</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jourdy Cox -->
+        <div class="artist-full-card reveal reveal-delay-1">
+          <div class="artist-full-card__image">
+            <img src="images/artist_jourdy_cox.png" alt="Jourdy Cox">
+            <div class="artist-full-card__num">02</div>
+          </div>
+          <div class="artist-full-card__body">
+            <h2 class="artist-full-card__name">JOURDY COX</h2>
+            <p class="artist-full-card__role">DJ · Producer</p>
+            <p class="artist-full-card__bio">Jourdy Cox is known for crafting dark, hypnotic journeys through the harder end of the techno spectrum. His productions blend industrial textures with hard-hitting percussion, creating a sound that is uniquely his own.</p>
+            <div class="artist-full-card__footer">
+              <div class="artist-full-card__social">
+                <a href="https://www.instagram.com/hardbassbash/" target="_blank" rel="noopener" title="Instagram">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+              </div>
+              <a href="events.html" class="btn btn-primary btn-sm">View Events</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Marth -->
+        <div class="artist-full-card reveal reveal-delay-2">
+          <div class="artist-full-card__image">
+            <img src="images/artist_marth.png" alt="Marth">
+            <div class="artist-full-card__num">03</div>
+          </div>
+          <div class="artist-full-card__body">
+            <h2 class="artist-full-card__name">MARTH</h2>
+            <p class="artist-full-card__role">DJ · Producer</p>
+            <p class="artist-full-card__bio">Marth's sets are a masterclass in tension and release. Drawing from the deepest cuts of hard techno and industrial, he builds atmospheres that feel like sonic architecture — each layer precisely placed for maximum impact.</p>
+            <div class="artist-full-card__footer">
+              <div class="artist-full-card__social">
+                <a href="https://www.instagram.com/hardbassbash/" target="_blank" rel="noopener" title="Instagram">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+              </div>
+              <a href="events.html" class="btn btn-primary btn-sm">View Events</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- KittyFlip -->
+        <div class="artist-full-card reveal reveal-delay-3">
+          <div class="artist-full-card__image">
+            <img src="images/artist_kittyflip.png" alt="KittyFlip">
+            <div class="artist-full-card__num">04</div>
+          </div>
+          <div class="artist-full-card__body">
+            <h2 class="artist-full-card__name">KITTYFLIP</h2>
+            <p class="artist-full-card__role">DJ · Producer</p>
+            <p class="artist-full-card__bio">KittyFlip brings a unique perspective to hard techno — blending ferocious energy with precise, technical mixing. Her sets are a statement: powerful, unpredictable, and impossible to ignore. A rising force in Indonesia's underground scene.</p>
+            <div class="artist-full-card__footer">
+              <div class="artist-full-card__social">
+                <a href="https://www.instagram.com/hardbassbash/" target="_blank" rel="noopener" title="Instagram">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+              </div>
+              <a href="events.html" class="btn btn-primary btn-sm">View Events</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Micju -->
+        <div class="artist-full-card reveal">
+          <div class="artist-full-card__image">
+            <img src="images/artist_micju.png" alt="Micju">
+            <div class="artist-full-card__num">05</div>
+          </div>
+          <div class="artist-full-card__body">
+            <h2 class="artist-full-card__name">MICJU</h2>
+            <p class="artist-full-card__role">DJ · Producer</p>
+            <p class="artist-full-card__bio">Micju's deep understanding of rhythm and structure sets him apart. His productions carry weight — dense, distorted, and designed to hit hard. On the decks, he translates that same energy into marathon sets built for the underground faithful.</p>
+            <div class="artist-full-card__footer">
+              <div class="artist-full-card__social">
+                <a href="https://www.instagram.com/hardbassbash/" target="_blank" rel="noopener" title="Instagram">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+              </div>
+              <a href="events.html" class="btn btn-primary btn-sm">View Events</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Barra -->
+        <div class="artist-full-card reveal reveal-delay-1">
+          <div class="artist-full-card__image">
+            <img src="images/artist_barra.png" alt="Barra">
+            <div class="artist-full-card__num">06</div>
+          </div>
+          <div class="artist-full-card__body">
+            <h2 class="artist-full-card__name">BARRA</h2>
+            <p class="artist-full-card__role">DJ · Producer</p>
+            <p class="artist-full-card__bio">Barra is the sonic architect of HardBassBash. His studio work pushes into experimental territory while remaining firmly rooted in hard techno — abstract structures, mechanical rhythms, and a fearless approach to sound design.</p>
+            <div class="artist-full-card__footer">
+              <div class="artist-full-card__social">
+                <a href="https://www.instagram.com/hardbassbash/" target="_blank" rel="noopener" title="Instagram">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+              </div>
+              <a href="events.html" class="btn btn-primary btn-sm">View Events</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- HRDG -->
+        <div class="artist-full-card reveal reveal-delay-2">
+          <div class="artist-full-card__image">
+            <img src="images/artist_hrdg.png" alt="HRDG">
+            <div class="artist-full-card__num">07</div>
+          </div>
+          <div class="artist-full-card__body">
+            <h2 class="artist-full-card__name">HRDG</h2>
+            <p class="artist-full-card__role">DJ · Producer</p>
+            <p class="artist-full-card__bio">HRDG (Hard Garage) is the wild card of the HardBassBash family. Straddling the line between hard techno and raw industrial, his sets are unpredictable and visceral — a chaotic force that always ends in euphoria.</p>
+            <div class="artist-full-card__footer">
+              <div class="artist-full-card__social">
+                <a href="https://www.instagram.com/hardbassbash/" target="_blank" rel="noopener" title="Instagram">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+              </div>
+              <a href="events.html" class="btn btn-primary btn-sm">View Events</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BOOKING CTA ===== -->
+  <div class="booking-section reveal">
+    <div class="container">
+      <p class="section-label">Interested?</p>
+      <h2>BOOK AN ARTIST</h2>
+      <p>Looking to book one of our artists for your event? Get in touch for booking inquiries and collaborations.</p>
+      <a href="contact.html" class="btn btn-primary">Contact For Booking</a>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img src="images/Logo_HARDBASSBASH_White.png" alt="HardBassBash">
+          <p>Jakarta's premier hard techno collective. Reshaping Indonesia's underground electronic music scene.</p>
+        </div>
+        <div>
+          <p class="footer__heading">Navigate</p>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="artists.html">Artists</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__heading">Artists</p>
+          <ul class="footer__links">
+            <li><a href="artists.html">Oschie</a></li>
+            <li><a href="artists.html">Jourdy Cox</a></li>
+            <li><a href="artists.html">Marth</a></li>
+            <li><a href="artists.html">KittyFlip</a></li>
+            <li><a href="artists.html">Micju</a></li>
+            <li><a href="artists.html">Barra</a></li>
+            <li><a href="artists.html">HRDG</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__heading">Follow Us</p>
+          <div class="footer__socials">
+            <a href="https://www.instagram.com/hardbassbash/" target="_blank" rel="noopener" class="footer__social-link" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2025 <span>HardBassBash</span>. All rights reserved.</p>
+        <div class="footer__bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pocketbase@0.21/dist/pocketbase.umd.js"></script>
+  <script src="js/api.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', () => HBB.initArtistsPage());</script>
+</body>
+</html>

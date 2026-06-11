@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HardBassBash — Jakarta's Hard Techno Collective</title>
+  <meta name="description" content="HardBassBash is Jakarta's premier hard techno collective. High-energy events across Jakarta, Bandung, Yogyakarta & Surabaya. Experience Indonesia's underground techno scene.">
+  <meta property="og:title" content="HardBassBash — Jakarta's Hard Techno Collective">
+  <meta property="og:description" content="Jakarta's premier hard techno collective. Events, artists & releases from the underground.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hardbassbash.com">
+  <meta property="og:image" content="images/hero_bg.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Page-specific: CTA Banner */
+    .cta-banner {
+      padding: 6rem 0;
+      background: var(--accent);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-banner::before {
+      content: 'HBB';
+      position: absolute;
+      font-family: var(--font-display);
+      font-size: 25rem;
+      color: rgba(0,0,0,0.08);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    .cta-banner h2 {
+      font-size: clamp(2.5rem, 7vw, 6rem);
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    .cta-banner p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+    .cta-banner .btn-outline {
+      border-color: rgba(255,255,255,0.6);
+      color: #fff;
+      position: relative;
+    }
+    .cta-banner .btn-outline:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: #fff;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="navbar__logo">
+      <img src="images/Logo_HARDBASSBASH_White.png" alt="HardBassBash">
+    </a>
+    <div class="navbar__links">
+      <a href="index.html" class="active">Home</a>
+      <a href="events.html">Events</a>
+      <a href="artists.html">Artists</a>
+      <a href="music.html">Music</a>
+      <a href="shop.html">Shop</a>
+      <a href="contact.html" class="navbar__cta">Contact</a>
+    </div>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="navbar__mobile" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="artists.html">Artists</a>
+    <a href="music.html">Music</a>
+    <a href="shop.html">Shop</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero__bg" style="background-image: url('images/hero_bg.png')"></div>
+    <div class="hero__content">
+      <img src="images/Logo_HARDBASSBASH_White.png" alt="HardBassBash" class="hero__logo">
+      <p class="hero__tagline">Jakarta &nbsp;·&nbsp; Indonesia</p>
+      <h1 class="hero__title">
+        <span class="glitch" data-text="HARD">HARD</span><br>
+        <span class="accent">BASS</span><br>
+        BASH
+      </h1>
+      <p class="hero__subtitle">Jakarta's Hard Techno Collective</p>
+      <div class="hero__actions">
+        <a href="events.html" class="btn btn-primary" id="heroEventsCta">Upcoming Events</a>
+        <a href="artists.html" class="btn btn-outline">Our Artists</a>
+      </div>
+    </div>
+    <div class="hero__scroll">Scroll</div>
+  </section>
+
+  <!-- ===== MARQUEE ===== -->
+  <div class="marquee-section" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-item">Hard Techno</span>
+      <span class="marquee-item">Industrial</span>
+      <span class="marquee-item">Jakarta</span>
+      <span class="marquee-item">Bandung</span>
+      <span class="marquee-item">Yogyakarta</span>
+      <span class="marquee-item">Surabaya</span>
+      <span class="marquee-item">Underground</span>
+      <span class="marquee-item">Reshaping The Night</span>
+    </div>
+  </div>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__text">
+          <p class="section-label about__label">Who We Are</p>
+          <h2>RESHAPING<br>THE <span class="text-accent">NIGHT</span></h2>
+          <p>HardBassBash is Jakarta's premier hard techno collective, born from a deep passion for raw, uncompromising sound. We exist to push the boundaries of Indonesia's underground electronic music scene through high-impact events, artist development, and community building.</p>
+          <p>From the sweat-soaked floors of Jakarta to the intimate spaces of Bandung, the cultural pulse of Yogyakarta, and the coastal energy of Surabaya — we bring hard techno to every corner of Indonesia with no compromises.</p>
+          <div class="about__stats">
+            <div class="stat reveal">
+              <div class="stat__number">4+</div>
+              <div class="stat__label">Cities</div>
+            </div>
+            <div class="stat reveal reveal-delay-1">
+              <div class="stat__number">7</div>
+              <div class="stat__label">Core Artists</div>
+            </div>
+            <div class="stat reveal reveal-delay-2">
+              <div class="stat__number">20+</div>
+              <div class="stat__label">Events Held</div>
+            </div>
+            <div class="stat reveal reveal-delay-3">
+              <div class="stat__number">100%</div>
+              <div class="stat__label">Underground</div>
+            </div>
+          </div>
+        </div>
+        <div class="about__visual reveal">
+          <div class="about__image-wrap">
+            <img src="images/artist_oschie.png" alt="HardBassBash DJ" class="about__image">
+          </div>
+          <div class="about__border"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CITIES ===== -->
+  <div class="cities">
+    <div class="cities__grid">
+      <div class="city-card">
+        <div class="city-card__bg" style="background-image: url('images/event_jakarta.png')"></div>
+        <div class="city-card__content">
+          <div class="city-card__num">01</div>
+          <div class="city-card__name">Jakarta</div>
+          <div class="city-card__events">Home Base</div>
+        </div>
+      </div>
+      <div class="city-card">
+        <div class="city-card__bg" style="background-image: url('images/event_bandung.png')"></div>
+        <div class="city-card__content">
+          <div class="city-card__num">02</div>
+          <div class="city-card__name">Bandung</div>
+          <div class="city-card__events">Active Chapter</div>
+        </div>
+      </div>
+      <div class="city-card">
+        <div class="city-card__bg" style="background-image: url('images/event_yogyakarta.png')"></div>
+        <div class="city-card__content">
+          <div class="city-card__num">03</div>
+          <div class="city-card__name">Yogyakarta</div>
+          <div class="city-card__events">Active Chapter</div>
+        </div>
+      </div>
+      <div class="city-card">
+        <div class="city-card__bg" style="background-image: url('images/event_surabaya.png')"></div>
+        <div class="city-card__content">
+          <div class="city-card__num">04</div>
+          <div class="city-card__name">Surabaya</div>
+          <div class="city-card__events">Active Chapter</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FEATURED EVENTS ===== -->
+  <section class="section" id="events-preview">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section-label">On The Radar</p>
+        <h2 class="section__title">UPCOMING<br>EVENTS</h2>
+      </div>
+      <div class="events__grid" id="homeEventsGrid">
+        <div class="event-card reveal" data-city="jakarta">
+          <div class="event-card__image">
+            <img src="images/event_jakarta.png" alt="HardBassBash Vol. 07">
+            <span class="event-card__badge">Upcoming</span>
+          </div>
+          <div class="event-card__body">
+            <div class="event-card__date">20 Jul 2025</div>
+            <h3 class="event-card__title">HardBassBash Vol. 07</h3>
+            <p class="event-card__venue">📍 Holywings Arena, Jakarta</p>
+            <div class="event-card__footer">
+              <span class="event-card__city-tag">Jakarta</span>
+              <a href="events.html" class="btn btn-primary btn-sm">Get Tickets</a>
+            </div>
+          </div>
+        </div>
+        <div class="event-card reveal reveal-delay-1" data-city="bandung">
+          <div class="event-card__image">
+            <img src="images/event_bandung.png" alt="HardBassBash x Bandung">
+            <span class="event-card__badge">Upcoming</span>
+          </div>
+          <div class="event-card__body">
+            <div class="event-card__date">10 Aug 2025</div>
+            <h3 class="event-card__title">HardBassBash × Bandung</h3>
+            <p class="event-card__venue">📍 Braga City Walk, Bandung</p>
+            <div class="event-card__footer">
+              <span class="event-card__city-tag">Bandung</span>
+              <a href="events.html" class="btn btn-primary btn-sm">Get Tickets</a>
+            </div>
+          </div>
+        </div>
+        <div class="event-card reveal reveal-delay-2" data-city="surabaya">
+          <div class="event-card__image">
+            <img src="images/event_surabaya.png" alt="HardBassBash: Dark Mode">
+            <span class="event-card__badge">Upcoming</span>
+          </div>
+          <div class="event-card__body">
+            <div class="event-card__date">07 Sep 2025</div>
+            <h3 class="event-card__title">HardBassBash: Dark Mode</h3>
+            <p class="event-card__venue">📍 Gelanggang Industri, Surabaya</p>
+            <div class="event-card__footer">
+              <span class="event-card__city-tag">Surabaya</span>
+              <a href="events.html" class="btn btn-primary btn-sm">Get Tickets</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-2 reveal">
+        <a href="events.html" class="btn btn-outline">View All Events</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== FEATURED ARTISTS ===== -->
+  <section class="section section--dark" id="artists-preview">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section-label">The Collective</p>
+        <h2 class="section__title">OUR<br>ARTISTS</h2>
+      </div>
+      <div class="artists__grid" id="homeArtistsGrid">
+
+        <div class="artist-card reveal">
+          <div class="artist-card__image">
+            <img src="images/artist_oschie.png" alt="Oschie">
+          </div>
+          <div class="artist-card__overlay">
+            <div class="artist-card__name">OSCHIE</div>
+            <div class="artist-card__role">DJ · Producer</div>
+            <div class="artist-card__social">
+              <a href="https://www.instagram.com/hardbassbash/" target="_blank" rel="noopener" title="Instagram">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="artist-card reveal reveal-delay-1">
+          <div class="artist-card__image">
+            <img src="images/artist_jourdy_cox.png" alt="Jourdy Cox">
+          </div>
+          <div class="artist-card__overlay">
+            <div class="artist-card__name">JOURDY COX</div>
+            <div class="artist-card__role">DJ · Producer</div>
+            <div class="artist-card__social">
+              <a href="https://www.instagram.com/hardbassbash/" target="_blank" rel="noopener" title="Instagram">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="artist-card reveal reveal-delay-2">
+          <div class="artist-card__image">
+            <img src="images/artist_marth.png" alt="Marth">
+          </div>
+          <div class="artist-card__overlay">
+            <div class="artist-card__name">MARTH</div>
+            <div class="artist-card__role">DJ · Producer</div>
+            <div class="artist-card__social">
+              <a href="https://www.instagram.com/hardbassbash/" target="_blank" rel="noopener" title="Instagram">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="artist-card reveal reveal-delay-3">
+          <div class="artist-card__image">
+            <img src="images/artist_kittyflip.png" alt="KittyFlip">
+          </div>
+          <div class="artist-card__overlay">
+            <div class="artist-card__name">KITTYFLIP</div>
+            <div class="artist-card__role">DJ · Producer</div>
+            <div class="artist-card__social">
+              <a href="https://www.instagram.com/hardbassbash/" target="_blank" rel="noopener" title="Instagram">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="artist-card reveal">
+          <div class="artist-card__image">
+            <img src="images/artist_micju.png" alt="Micju">
+          </div>
+          <div class="artist-card__overlay">
+            <div class="artist-card__name">MICJU</div>
+            <div class="artist-card__role">DJ · Producer</div>
+            <div class="artist-card__social">
+              <a href="https://www.instagram.com/hardbassbash/" target="_blank" rel="noopener" title="Instagram">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="artist-card reveal reveal-delay-1">
+          <div class="artist-card__image">
+            <img src="images/artist_barra.png" alt="Barra">
+          </div>
+          <div class="artist-card__overlay">
+            <div class="artist-card__name">BARRA</div>
+            <div class="artist-card__role">DJ · Producer</div>
+            <div class="artist-card__social">
+              <a href="https://www.instagram.com/hardbassbash/" target="_blank" rel="noopener" title="Instagram">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="artist-card reveal reveal-delay-2">
+          <div class="artist-card__image">
+            <img src="images/artist_hrdg.png" alt="HRDG">
+          </div>
+          <div class="artist-card__overlay">
+            <div class="artist-card__name">HRDG</div>
+            <div class="artist-card__role">DJ · Producer</div>
+            <div class="artist-card__social">
+              <a href="https://www.instagram.com/hardbassbash/" target="_blank" rel="noopener" title="Instagram">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="text-center mt-2 reveal">
+        <a href="artists.html" class="btn btn-outline">Meet The Artists</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BANNER ===== -->
+  <div class="cta-banner reveal">
+    <div class="container">
+      <h2>READY TO EXPERIENCE<br>HARD TECHNO?</h2>
+      <p>Join the underground. Follow us for the latest events, releases &amp; drops.</p>
+      <a href="https://www.instagram.com/hardbassbash/" target="_blank" rel="noopener" class="btn btn-outline">
+        Follow on Instagram
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img src="images/Logo_HARDBASSBASH_White.png" alt="HardBassBash">
+          <p>Jakarta's premier hard techno collective. Reshaping Indonesia's underground electronic music scene since the beginning.</p>
+        </div>
+        <div>
+          <p class="footer__heading">Navigate</p>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="artists.html">Artists</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__heading">Artists</p>
+          <ul class="footer__links">
+            <li><a href="artists.html">Oschie</a></li>
+            <li><a href="artists.html">Jourdy Cox</a></li>
+            <li><a href="artists.html">Marth</a></li>
+            <li><a href="artists.html">KittyFlip</a></li>
+            <li><a href="artists.html">Micju</a></li>
+            <li><a href="artists.html">Barra</a></li>
+            <li><a href="artists.html">HRDG</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__heading">Follow Us</p>
+          <div class="footer__socials">
+            <a href="https://www.instagram.com/hardbassbash/" target="_blank" rel="noopener" class="footer__social-link" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2025 <span>HardBassBash</span>. All rights reserved.</p>
+        <div class="footer__bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pocketbase@0.21/dist/pocketbase.umd.js"></script>
+  <script src="js/api.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', () => HBB.initHomePage());</script>
+</body>
+</html>

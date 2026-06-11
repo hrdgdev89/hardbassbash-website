@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music — HardBassBash</title>
+  <meta name="description" content="HardBassBash music releases, mixes and podcasts. Hard techno productions from Jakarta's underground collective.">
+  <meta property="og:title" content="Music — HardBassBash">
+  <meta property="og:type" content="website">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .mix-card {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 2rem;
+      border: 1px solid var(--border);
+      background: var(--bg-surface);
+      padding: 1.5rem;
+      transition: var(--transition);
+      align-items: center;
+    }
+    .mix-card:hover {
+      border-color: var(--accent);
+      background: var(--bg-elevated);
+    }
+    .mix-card__cover {
+      aspect-ratio: 1;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .mix-card__cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(30%);
+      transition: var(--transition-slow);
+    }
+    .mix-card:hover .mix-card__cover img { filter: grayscale(0%); }
+    .mix-card__num {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+    .mix-card__title {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+    .mix-card__artist {
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .mix-card__desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+    .mix-card__meta {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .mix-card__meta-item {
+      font-family: var(--font-heading);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .mixes-list { display: flex; flex-direction: column; gap: 1rem; }
+
+    .stream-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .stream-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text-secondary);
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: var(--transition);
+    }
+    .stream-link:hover {
+      border-color: var(--accent);
+      color: var(--text-primary);
+      background: var(--accent-subtle);
+    }
+    .stream-link__icon { font-size: 1.4rem; }
+
+    @media (max-width: 600px) {
+      .mix-card { grid-template-columns: 1fr; }
+      .mix-card__cover { max-width: 160px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="navbar__logo"><img src="images/Logo_HARDBASSBASH_White.png" alt="HardBassBash"></a>
+    <div class="navbar__links">
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="artists.html">Artists</a>
+      <a href="music.html" class="active">Music</a>
+      <a href="shop.html">Shop</a>
+      <a href="contact.html" class="navbar__cta">Contact</a>
+    </div>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="navbar__mobile" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="artists.html">Artists</a>
+    <a href="music.html">Music</a>
+    <a href="shop.html">Shop</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- ===== PAGE HERO ===== -->
+  <div class="page-hero">
+    <div class="page-hero__bg" style="background-image: url('images/release_1.png')"></div>
+    <div class="page-hero__ghost">MUSIC</div>
+    <div class="container">
+      <p class="page-hero__label">HardBassBash</p>
+      <h1 class="page-hero__title">MUSIC</h1>
+      <p class="page-hero__subtitle">Raw productions and mixes from the HardBassBash collective. Hard techno made in Jakarta.</p>
+    </div>
+  </div>
+
+  <!-- ===== LATEST RELEASES ===== -->
+  <section class="section" id="releases">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section-label">Discography</p>
+        <h2 class="section__title">LATEST<br>RELEASES</h2>
+      </div>
+      <div class="releases__grid" id="releasesGrid">
+
+        <div class="release-card reveal">
+          <div class="release-card__cover">
+            <img src="images/release_1.png" alt="System Collapse">
+            <div class="release-card__play">▶</div>
+          </div>
+          <div class="release-card__title">System Collapse</div>
+          <div class="release-card__artist">Oschie & Marth</div>
+          <div class="release-card__type">EP &nbsp;·&nbsp; 2025</div>
+        </div>
+
+        <div class="release-card reveal reveal-delay-1">
+          <div class="release-card__cover">
+            <img src="images/release_2.png" alt="Void Protocol">
+            <div class="release-card__play">▶</div>
+          </div>
+          <div class="release-card__title">Void Protocol</div>
+          <div class="release-card__artist">Jourdy Cox</div>
+          <div class="release-card__type">Single &nbsp;·&nbsp; 2025</div>
+        </div>
+
+        <div class="release-card reveal reveal-delay-2">
+          <div class="release-card__cover">
+            <img src="images/release_3.png" alt="Terminal Phase">
+            <div class="release-card__play">▶</div>
+          </div>
+          <div class="release-card__title">Terminal Phase</div>
+          <div class="release-card__artist">HRDG & Micju</div>
+          <div class="release-card__type">EP &nbsp;·&nbsp; 2025</div>
+        </div>
+
+        <div class="release-card reveal reveal-delay-3">
+          <div class="release-card__cover">
+            <img src="images/release_1.png" alt="Null Sequence">
+            <div class="release-card__play">▶</div>
+          </div>
+          <div class="release-card__title">Null Sequence</div>
+          <div class="release-card__artist">KittyFlip</div>
+          <div class="release-card__type">Single &nbsp;·&nbsp; 2024</div>
+        </div>
+
+        <div class="release-card reveal">
+          <div class="release-card__cover">
+            <img src="images/release_2.png" alt="Concrete Dreams">
+            <div class="release-card__play">▶</div>
+          </div>
+          <div class="release-card__title">Concrete Dreams</div>
+          <div class="release-card__artist">Barra</div>
+          <div class="release-card__type">EP &nbsp;·&nbsp; 2024</div>
+        </div>
+
+        <div class="release-card reveal reveal-delay-1">
+          <div class="release-card__cover">
+            <img src="images/release_3.png" alt="Iron Curtain">
+            <div class="release-card__play">▶</div>
+          </div>
+          <div class="release-card__title">Iron Curtain</div>
+          <div class="release-card__artist">HardBassBash Various</div>
+          <div class="release-card__type">Compilation &nbsp;·&nbsp; 2024</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== MIXES / PODCASTS ===== -->
+  <section class="section section--dark" id="mixes">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section-label">Listen</p>
+        <h2 class="section__title">MIXES &amp;<br>PODCASTS</h2>
+      </div>
+      <div class="mixes-list" id="mixesList">
+
+        <div class="mix-card reveal">
+          <div class="mix-card__cover">
+            <img src="images/artist_oschie.png" alt="HBB Mix 007">
+          </div>
+          <div class="mix-card__info">
+            <div class="mix-card__num">HBB Mix 007</div>
+            <h3 class="mix-card__title">System Collapse Mix</h3>
+            <div class="mix-card__artist">Oschie</div>
+            <p class="mix-card__desc">A blistering 60-minute journey through the hardest edges of industrial techno. Oschie at his most relentless — recorded live at HardBassBash Vol. 06.</p>
+            <div class="mix-card__meta">
+              <span class="mix-card__meta-item">60 min</span>
+              <span class="mix-card__meta-item">Hard Techno</span>
+              <span class="mix-card__meta-item">2025</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mix-card reveal">
+          <div class="mix-card__cover">
+            <img src="images/artist_jourdy_cox.png" alt="HBB Mix 006">
+          </div>
+          <div class="mix-card__info">
+            <div class="mix-card__num">HBB Mix 006</div>
+            <h3 class="mix-card__title">Nocturnal Frequency</h3>
+            <div class="mix-card__artist">Jourdy Cox</div>
+            <p class="mix-card__desc">Deep, hypnotic, and relentlessly forward. Jourdy Cox presents 75 minutes of his signature dark hard techno — engineered for the dancefloor at 3 AM.</p>
+            <div class="mix-card__meta">
+              <span class="mix-card__meta-item">75 min</span>
+              <span class="mix-card__meta-item">Industrial Techno</span>
+              <span class="mix-card__meta-item">2025</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mix-card reveal">
+          <div class="mix-card__cover">
+            <img src="images/artist_kittyflip.png" alt="HBB Mix 005">
+          </div>
+          <div class="mix-card__info">
+            <div class="mix-card__num">HBB Mix 005</div>
+            <h3 class="mix-card__title">Flip The Grid</h3>
+            <div class="mix-card__artist">KittyFlip</div>
+            <p class="mix-card__desc">KittyFlip dismantles the dancefloor and rebuilds it from scratch. 90 minutes of hard techno that defies expectation — recorded at HardBassBash × Bandung.</p>
+            <div class="mix-card__meta">
+              <span class="mix-card__meta-item">90 min</span>
+              <span class="mix-card__meta-item">Hard Techno</span>
+              <span class="mix-card__meta-item">2024</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STREAMING LINKS ===== -->
+  <section class="section" id="streaming">
+    <div class="container">
+      <div class="section__header text-center reveal">
+        <p class="section-label">Listen Everywhere</p>
+        <h2 class="section__title">FIND US ON</h2>
+      </div>
+      <div class="stream-grid">
+        <a href="https://www.instagram.com/hardbassbash/" target="_blank" rel="noopener" class="stream-link reveal">
+          <span class="stream-link__icon">📷</span> Instagram
+        </a>
+        <a href="#" class="stream-link reveal reveal-delay-1">
+          <span class="stream-link__icon">☁️</span> SoundCloud
+        </a>
+        <a href="#" class="stream-link reveal reveal-delay-2">
+          <span class="stream-link__icon">▶️</span> YouTube
+        </a>
+        <a href="#" class="stream-link reveal reveal-delay-3">
+          <span class="stream-link__icon">🎵</span> Spotify
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img src="images/Logo_HARDBASSBASH_White.png" alt="HardBassBash">
+          <p>Jakarta's premier hard techno collective. Reshaping Indonesia's underground electronic music scene.</p>
+        </div>
+        <div>
+          <p class="footer__heading">Navigate</p>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="artists.html">Artists</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__heading">Artists</p>
+          <ul class="footer__links">
+            <li><a href="artists.html">Oschie</a></li>
+            <li><a href="artists.html">Jourdy Cox</a></li>
+            <li><a href="artists.html">Marth</a></li>
+            <li><a href="artists.html">KittyFlip</a></li>
+            <li><a href="artists.html">Micju</a></li>
+            <li><a href="artists.html">Barra</a></li>
+            <li><a href="artists.html">HRDG</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__heading">Follow Us</p>
+          <div class="footer__socials">
+            <a href="https://www.instagram.com/hardbassbash/" target="_blank" rel="noopener" class="footer__social-link" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2025 <span>HardBassBash</span>. All rights reserved.</p>
+        <div class="footer__bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pocketbase@0.21/dist/pocketbase.umd.js"></script>
+  <script src="js/api.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', () => HBB.initMusicPage());</script>
+</body>
+</html>
