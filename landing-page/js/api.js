@@ -48,7 +48,7 @@
     // =========================================================
     function getFileUrl(record, filename) {
         if (!filename) return null;
-        return pb.files.getURL(record, filename);
+        return pb.files.getUrl(record, filename);
     }
 
     function formatDate(dateStr) {
