@@ -1447,7 +1447,20 @@ h4, h5, h6  { font-family: var(--font-heading); }
   line-height: 1.8;
 }
 
-/* Contact form — inline error */
+/* ===== RICH TEXT IN ARTIST BIO — normalize formatting ===== */
+.artist-full-card__bio strong,
+.artist-full-card__bio b {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.artist-full-card__bio em,
+.artist-full-card__bio i {
+  font-style: italic;
+  color: var(--text-secondary);
+}
+/* Home page artist card bio */
+.artist-card__role strong,
+.artist-card__role b { font-weight: 600; }
 .hbb-form-error {
   padding: 0.9rem 1.25rem;
   border-left: 3px solid var(--accent);
