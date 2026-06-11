@@ -13,6 +13,14 @@
     // CONFIG
     // =========================================================
     const PB_URL = 'http://127.0.0.1:8090';
+
+    // Guard: SDK must be loaded before api.js runs
+    if (typeof PocketBase === 'undefined') {
+        console.error('[HBB] PocketBase SDK not loaded! Make sure pocketbase.umd.js is included before api.js.');
+        window.HBB = { initHomePage(){}, initEventsPage(){}, initArtistsPage(){}, initMusicPage(){}, initShopPage(){}, initContactPage(){} };
+        return;
+    }
+
     const pb = new PocketBase(PB_URL);
 
     // Fallback image paths (from local /images/ folder)
@@ -439,6 +447,10 @@
         const artists = await getArtists();
         if (artists.length) {
             setContent('homeArtistsGrid', artists.map((a, i) => renderArtistCard(a, i)).join(''));
+        } else {
+            setContent('homeArtistsGrid', renderEmpty(
+                'Could not load artists. Make sure PocketBase is running at <code>http://127.0.0.1:8090</code>'
+            ));
         }
 
         triggerReveal();
